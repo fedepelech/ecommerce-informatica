@@ -1,0 +1,18 @@
+.cont {
+    padding: 1rem 1.5rem 1rem 0rem;
+}
+.cont-card {
+    align-items: center;
+}
+.img-container {
+    background-color: white !important;
+    width:15rem;
+    height:15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.img-container img {
+    position: absolute;
+}

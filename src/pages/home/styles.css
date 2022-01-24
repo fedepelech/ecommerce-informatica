@@ -1,0 +1,16 @@
+.bg-rebecca {
+    background-color: blueviolet !important;
+}
+.bg-rebecca:hover {
+    background-color: rgb(179, 124, 231) !important;
+    cursor: pointer;
+}
+.content {
+    padding-top: 2rem;
+}
+h3 {
+    text-align: center;
+}
+.content h5 {
+    text-align: center;
+}
