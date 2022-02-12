@@ -30,6 +30,20 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className='col-lg-4 col-sm-6'>
+          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/monitores')}>
+            <div className="card-body">
+              <h5 className="card-title">Monitores</h5>
+            </div>
+          </div>
+        </div>
+        <div className='col-lg-4 col-sm-6'>
+          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/fuentes')}>
+            <div className="card-body">
+              <h5 className="card-title">Fuentes</h5>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

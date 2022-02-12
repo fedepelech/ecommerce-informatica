@@ -57,6 +57,34 @@ const listRamsPc = () => {
         })  
 }
 
+const listMonitores = () => {
+    return axios.get(
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvLbdGk_43mZ5Qvs94F8hHKXByhctaXujJuW-zylcQR91wKB2Nx-M4VtJUzuSWHIMKT4cJN5C8dFAF/pub?output=csv'
+    )
+        .then((response) => {
+            return new Promise((resolve, reject) => {
+                Papa.parse(response.data, {
+                    header: true,
+                    complete: results => resolve(results.data)
+                })
+            })
+        })
+}
+
+const listFuentes = () => {
+    return axios.get(
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4sgh2pObI2swyCD6qval85XyMpHMqaFlKWf3IL0wGNB3d4oNYAkXACPkbr1OPwOmMSdMiNr0ZPr5N/pub?output=csv'
+    )
+        .then((response) => {
+            return new Promise((resolve, reject) => {
+                Papa.parse(response.data, {
+                    header: true,
+                    complete: results => resolve(results.data)
+                })
+            })
+        })
+}
+
 export const getData = (category) => {
     switch(category) {
         case 'ssd-sata':
@@ -65,10 +93,15 @@ export const getData = (category) => {
             return listM2Ssd();
         case 'ram':
             return listRamsPc();
+        case 'monitores':
+            return listMonitores();
+        case 'fuentes':
+            return listFuentes();
         default:
             return null;
     }
 }
+
 export default {
     getData
 }

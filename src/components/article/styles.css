@@ -5,14 +5,25 @@
     align-items: center;
 }
 .img-container {
-    background-color: white !important;
     width:15rem;
     height:15rem;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.img-container img {
-    position: absolute;
+.section-quantity-cart {
+    display: flex;
+    justify-content: space-between;
+}
+.section-quantity-cart a{
+    width: 70%;
+}
+.quantity-text {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 400;
+    color: gray;
+}
+.input-quantity {
+    width: 25%;
 }

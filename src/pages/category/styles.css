@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+    .content-articles {
+        justify-content: center;
+    }
+}
+
+.loader-content {
+    text-align: center;
+    margin-top: 5rem;
+    align-items: center;
+}

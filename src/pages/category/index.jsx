@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Article from '../../components/article';
 import { getData } from '../../services';
 import './styles.css';
@@ -8,6 +8,7 @@ export default function Category() {
     const [loading, setLoading] = useState(false);
     const [articles, setArticles] = useState([]);
     const { category } = useParams();
+
     useEffect(() => {
         setLoading(true);
         getData(category)
@@ -23,7 +24,7 @@ export default function Category() {
     let body = (
         <>
             {articles.map((article) => (
-              <div className='col-lg-3 col-sm-4 col-6'>
+              <div className='col-lg-3 col-sm-6 col-10' key={article.id}>
                 <Article article={article} />
               </div>
             ))}
@@ -32,16 +33,16 @@ export default function Category() {
 
     if(loading) {
       body = (
-        <>
+        <div className='loader-content'>
           <h2>Loading...</h2>
-        </>
+        </div>
       )
     }
 
     return (
       <div className='container'>
         <h3>Articulos disponibles</h3>
-        <div className='row'>
+        <div className='row content-articles'>
           {body}
         </div>
       </div>

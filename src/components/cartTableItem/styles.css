@@ -1,0 +1,27 @@
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-container-cart img {
+    padding: 0.5rem 0;
+    width: auto;
+    max-width: 12rem;
+    height: 5rem;
+    position: static;
+}
+.table-item-cart {
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    border: 2px solid #21252952;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name-container-cart {
+    display: flex;
+    align-items: center;
+}
+.price-container-cart p {
+    margin: 0;
+}

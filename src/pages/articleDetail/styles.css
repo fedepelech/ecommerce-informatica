@@ -1,0 +1,21 @@
+.content-detail {
+    padding-top: 5rem;
+    height: 50vh;
+    width: 100% !important;
+}
+.img-container2 {
+    display: flex;
+    justify-content: center;
+}
+.img-container2 img {
+    max-height: 40vh;
+}
+img.contain{
+    object-fit: contain;
+}
+.description-text {
+    font-size: 14px;
+}
+.button-cart-quantity {
+    
+}

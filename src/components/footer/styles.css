@@ -1,0 +1,13 @@
+.footer-bg {
+    background-color: #212529;
+    position: relative;
+    bottom: 0;
+}
+
+.content-footer {
+    background-color: #212529;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 8vh;
+}
