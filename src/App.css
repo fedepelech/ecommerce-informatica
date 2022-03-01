@@ -39,6 +39,6 @@
 
 body {
   position: relative;
-  padding-bottom: 3em;
   min-height: 92vh;
+  margin: 0;
 }
