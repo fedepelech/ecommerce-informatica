@@ -18,17 +18,26 @@ export default function Header() {
   }
     return (
       <div className='container-fluid header'>
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand className='brand-clickable' onClick={goHome}>
-            Coghlan Gaming
-            </Navbar.Brand>
-            <div className='cart-icon brand-clickable' onClick={goCart}>
-              <span>{cart.length !== 0 ? cart.length : null}</span>
-              <AiOutlineShoppingCart color='white' size={23} />
+        <div className='container'>
+          <div className='row content-header'>
+            <div className='col-10 col-lg-8 offset-lg-1'>ac
+              <img
+                alt="Logo Coghlan Gaming"
+                src="/assets/logo-sin-fondo.png"
+                width="100"
+                height="100"
+                className="d-inline-block"
+                onClick={goHome}
+              />
             </div>
-          </Container>
-        </Navbar>
+            <div className='col-2 col-lg-2 offset-lg-1'>
+              <div className='cart-icon' onClick={goCart}>
+                <span>{cart.length !== 0 ? cart.length : null}</span>
+                <AiOutlineShoppingCart color='white' size={23} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
 }

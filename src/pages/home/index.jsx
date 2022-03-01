@@ -6,7 +6,7 @@ export default function Home() {
   const history = useHistory();
 
   return (
-    <div className='container'>
+    <div className='container center-img'>
       <h3>Categorías</h3>
       <div className='row content'>
         <div className='col-lg-4 col-sm-6'>

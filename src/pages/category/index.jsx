@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { TailSpin } from 'react-loader-spinner';
 import { useParams } from 'react-router-dom';
 import Article from '../../components/article';
 import { getData } from '../../services';
@@ -34,7 +35,7 @@ export default function Category() {
     if(loading) {
       body = (
         <div className='loader-content'>
-          <h2>Loading...</h2>
+          <TailSpin color="#F59345" height={80} width={80} />
         </div>
       )
     }

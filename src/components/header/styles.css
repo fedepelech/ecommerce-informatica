@@ -1,13 +1,29 @@
 .header {
+    background-color: rgb(41, 41, 41);
+}
+.content-header {
     padding-right: 0 !important;
     padding-left: 0 !important;
     margin: 0 0 3.5em 0;
+    height: 7vh;
 }
-.brand-clickable {
+.header img {
+    position: absolute;
+    top: 8px;
     cursor: pointer;
 }
 .cart-icon span {
     color: lightgreen;
     font-size: 14px;
     font-weight: bold;
+}
+.content-header {
+    display: table;
+}
+.cart-icon {
+    cursor: pointer;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
