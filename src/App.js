@@ -14,9 +14,6 @@ function App() {
       <Header />
       <main>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
           <Route path="/categoria/:category">
             <Category />
           </Route>
@@ -25,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/detalle">
             <ArticleDetail />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </main>
