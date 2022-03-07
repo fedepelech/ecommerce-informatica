@@ -42,7 +42,7 @@ export default function Category() {
 
     return (
       <div className='container'>
-        <h3>Articulos disponibles</h3>
+        <h3 className='title'>Articulos disponibles</h3>
         <div className='row content-articles'>
           {body}
         </div>
