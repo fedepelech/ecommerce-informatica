@@ -27,3 +27,13 @@
     display: flex;
     justify-content: center;
 }
+.button-category {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.button-category a {
+    text-decoration: none;
+    color: #F59345;
+}

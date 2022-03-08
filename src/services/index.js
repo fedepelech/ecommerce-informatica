@@ -127,6 +127,20 @@ const listParlantes = () => {
         })
 }
 
+const listOfertas = () => {
+    return axios.get(
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSlSDdY2RaFWFdFhuOSjDX-uudY8d9kHWGMJWm-QR3EIEnsEuVb_i0PLcAWX5Io076s7by4QHaNY5jg/pub?output=csv'
+    )
+        .then((response) => {
+            return new Promise((resolve, reject) => {
+                Papa.parse(response.data, {
+                    header: true,
+                    complete: results => resolve(results.data)
+                })
+            })
+        })
+}
+
 export const getData = (category) => {
     switch(category) {
         case 'ssd-sata':
@@ -145,6 +159,8 @@ export const getData = (category) => {
             return listTeclados();
         case 'parlantes':
             return listParlantes();
+        case 'ofertas':
+            return listOfertas();
         default:
             return null;
     }

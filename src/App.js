@@ -6,6 +6,7 @@ import Category from './pages/category';
 import ArticleDetail from './pages/articleDetail';
 import { Cart } from './pages/cart';
 import Footer from './components/footer';
+import { AllCategories } from './pages/allCategories';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         <Switch>
           <Route path="/categoria/:category">
             <Category />
+          </Route>
+          <Route exact path="/categorias">
+            <AllCategories />
           </Route>
           <Route exact path="/cart">
             <Cart />

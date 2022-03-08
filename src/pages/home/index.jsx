@@ -1,71 +1,50 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { TailSpin } from 'react-loader-spinner';
+import Article from '../../components/article';
+import { getData } from '../../services';
 import './styles.css';
 
 export default function Home() {
-  const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+      getData('ofertas')
+          .then((articles) => {
+              setArticles(articles);
+              setLoading(false);
+          })
+          .catch(() => {
+              console.log('error');
+          })
+  }, [])
+
+  let body = (
+    <>
+      {articles.map((article) => (
+        <div className='col-lg-3 col-sm-6 col-10' key={article.id}>
+          <Article article={article} />
+        </div>
+      ))}
+    </>
+  )
+
+  if(loading) {
+    body = (
+      <div className='loader-content'>
+        <TailSpin color="#F59345" height={80} width={80} />
+      </div>
+    )
+  }
 
   return (
-    <div className='container center-img'>
-      <h3>Categorías</h3>
-      <div className='row content'>
-        <div className='col-lg-4 col-sm-6'>
-          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/ram')}>
-            <div className="card-body">
-              <h5 className="card-title">Memorias Ram</h5>
-            </div>
-          </div>
-        </div>
-        <div className='col-lg-4 col-sm-6'>
-          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/ssd-m2')}>
-            <div className="card-body">
-              <h5 className="card-title">Discos sólidos M2</h5>
-            </div>
-          </div>
-        </div>
-        <div className='col-lg-4 col-sm-6'>
-          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/ssd-sata')}>
-            <div className="card-body">
-              <h5 className="card-title">Discos sólidos SATA</h5>
-            </div>
-          </div>
-        </div>
-        <div className='col-lg-4 col-sm-6'>
-          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/monitores')}>
-            <div className="card-body">
-              <h5 className="card-title">Monitores</h5>
-            </div>
-          </div>
-        </div>
-        <div className='col-lg-4 col-sm-6'>
-          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/fuentes')}>
-            <div className="card-body">
-              <h5 className="card-title">Fuentes</h5>
-            </div>
-          </div>
-        </div>
-        <div className='col-lg-4 col-sm-6'>
-          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/auriculares')}>
-            <div className="card-body">
-              <h5 className="card-title">Auriculares</h5>
-            </div>
-          </div>
-        </div>
-        <div className='col-lg-4 col-sm-6'>
-          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/teclados')}>
-            <div className="card-body">
-              <h5 className="card-title">Teclados</h5>
-            </div>
-          </div>
-        </div>
-        <div className='col-lg-4 col-sm-6'>
-          <div className="card text-white mb-3 bg-rebecca" onClick={() => history.push('/categoria/parlantes')}>
-            <div className="card-body">
-              <h5 className="card-title">Parlantes</h5>
-            </div>
-          </div>
-        </div>
+    <div className='container'>
+      <h2>MEGA-OFERTAS!!!</h2>
+      <h6 className='subtitle'>Sujeto a disponibilidad de stock</h6>
+      <div className='row content-articles'>
+        {body}
       </div>
     </div>
-  );
+  )
 }
