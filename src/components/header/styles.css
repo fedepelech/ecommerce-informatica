@@ -33,7 +33,12 @@
     display: flex;
     align-items: center;
 }
-.button-category a {
+.button-category span {
+    cursor: pointer;
     text-decoration: none;
     color: #F59345;
+}
+.button-category span:hover {
+    cursor: pointer;
+    color: #1cacff;
 }

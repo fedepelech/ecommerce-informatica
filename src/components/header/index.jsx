@@ -16,6 +16,10 @@ export default function Header() {
   const goCart = () => {
     history.push('/cart');
   }
+
+  const goCategories = () => {
+    history.push('/categorias');
+  }
     return (
       <div className='container-fluid header'>
         <div className='container'>
@@ -32,7 +36,8 @@ export default function Header() {
             </div>
             <div className='col-6 col-lg-2'>
               <div className='button-category'>
-                <a href="/categorias">Ver todas las categorías</a>
+                <span onClick={goCategories}>
+                  Ver todas las categorías</span>
               </div>
             </div>
             <div className='col-2 col-lg-3  offset-lg-1'>
